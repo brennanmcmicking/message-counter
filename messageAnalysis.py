@@ -64,11 +64,17 @@ for thread in message_file:
 
     # print(f'Number of participants: {len(participants)}')
 
+    if len(participants) != 2:
+        continue
+
     # create a row for each message
     for message in messages:
 
-        # note: we are also going to include images as a message
-        # sending memes to your friends counts.
+        content = message.get('text')
+
+        # comment this if statement if you want to include images as data points
+        if not content:
+            continue
 
         # we want to include group chat data in our design, so if we come across a message that our user sent, we have to add a data point for every
         # person that saw it
@@ -79,7 +85,6 @@ for thread in message_file:
             for person in participants:
                 # print(f'\t{person}')
                 if person != my_name:
-                    content = message.get('text')
                     rows.append({
                         'friend': person,
                         'received': False,
