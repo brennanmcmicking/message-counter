@@ -4,3 +4,6 @@ venv/
 
 # Facebook message data
 messages/
+
+# Default output directory
+output/
