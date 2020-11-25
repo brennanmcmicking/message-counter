@@ -7,7 +7,7 @@ import argparse
 # Third-party imports
 import pandas as pd
 
-# Get command line parameters
+# Parse command line parameters
 parser = argparse.ArgumentParser(description='''
     Process facebook json message data. The messages directory from the data download must 
     be in the current working directory. 
